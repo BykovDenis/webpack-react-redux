@@ -80,14 +80,14 @@ reactTransform[1].transforms.push({
 module.exports = {
   context: __dirname + '/src/',
   entry: {
-    mainpage_slider: './js/slider',
-    mainpage_styles: './scss'
+    components: './js/',
+    components_styles: './scss'
   },
   output: {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/',
-    filename: 'js/slider/[name].[hash].js',
-    chunkFilename: 'js/slider/[name].[hash].js'
+    filename: 'js/[name].[hash].js',
+    chunkFilename: 'js/[name].[hash].js'
   },
   devtool: 'inline-source-map',
   // Определение расширений файлов по-умолчанию

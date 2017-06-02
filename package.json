@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "REFRESH=refresh webpack-dev-server --inline --colors --config webpack.config.js",
+    "dev": "REFRESH=refresh webpack-dev-server --inline --colors --hot --config webpack.config.js",
     "start-dev": "REFRESH=refresh NODE_ENV=development webpack --colors --progress --config webpack.config.js",
     "prod": "REFRESH=refresh NODE_ENV=production webpack-dev-server --hot --watch --colors --config webpack.config.js",
     "start-prod": "REFRESH=refresh NODE_ENV=production webpack --colors --progress --config webpack.config.js"
