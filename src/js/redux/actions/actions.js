@@ -7,15 +7,11 @@ import initialState from '../initialState/initialState';
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
-/*
-const getHTTP = (url, callback, dispatch) => {
-  fetch(url)
-    .then(response => response.json())
-    .then((data) => {
-      callback(data, dispatch);
-    });
+const timeout = 15000;
+
+const urls = {
+  getAiports: `https://api.flightstats.com/flex/airports/rest/v1/jsonp/countryCode/${initialState.country}?callback=responseAirportsData&appId=${initialState.appid}&appKey=${initialState.apikey}`
 };
-*/
 
 const responseData = (data = initialState, dispatch) => {
   dispatch({
@@ -24,8 +20,26 @@ const responseData = (data = initialState, dispatch) => {
   });
 };
 
-const getActionData = () => (dispatch) => {
+// Загружаем переменную в память
+function loadJSONData(url, dispatch) {
+  window.responseAirportsData = function responseAirportsData(data = initialState) {
+    dispatch({
+      type: constants.GET_AIRPORTS,
+      payload: data
+    });
+  };
+  const script = document.createElement('script');
+  script.src = url;
+  document.body.appendChild(script);
+}
+
+export const getActionData = () => (dispatch) => {
   responseData(initialState, dispatch);
 };
 
-export default getActionData;
+export const getAirportsData = () => (dispatch) => {
+  loadJSONData(urls.getAiports, dispatch);
+  setInterval(() => {
+    loadJSONData(urls.getAiports, dispatch);
+  }, timeout);
+};

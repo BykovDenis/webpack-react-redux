@@ -3,19 +3,20 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // модуль комбинирования работы нескольких актшионов
 import { bindActionCreators } from 'redux';
-import getActionData from '../redux/actions/actions';
+import * as getActionData from '../redux/actions/actions';
 // подгрузка компонентов
 import Button from '../components/button/button';
 
 class ReactComponent extends Component {
   static get propTypes() {
     return {
-      getData: PropTypes.func.isRequired,
+      getData: PropTypes.object.isRequired,
       currentStore: PropTypes.object.isRequired,
     };
   }
   componentWillMount() {
-    this.props.getData();
+    this.props.getData.getActionData();
+    this.props.getData.getAirportsData();
   }
   render() {
     this.i = 2;
