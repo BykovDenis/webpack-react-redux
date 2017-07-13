@@ -12,6 +12,7 @@ class ReactComponent extends Component {
     const { props } = this;
     return (
       <div>
+        {props.children}
         custom component
         <br />
         <Button
