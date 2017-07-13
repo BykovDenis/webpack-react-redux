@@ -12,8 +12,8 @@ export default handleActions({
   [GET_DATA]: state => ({
     ...state,
   }),
-  [COUNTER_INCREMENT]: (state, action) => ({
+  [COUNTER_INCREMENT]: state => ({
     ...state,
-    counter: action.payload
+    counter: state.counter + 1
   })
 }, initialState);

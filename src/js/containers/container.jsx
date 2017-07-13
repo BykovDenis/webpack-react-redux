@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// reselect
-import { createSelector } from 'reselect';
 // модуль комбинирования работы нескольких актшионов
 import { bindActionCreators } from 'redux';
 import * as actionCreators from '../redux/actions/actions';
@@ -9,48 +7,28 @@ import * as actionCreators from '../redux/actions/actions';
 import Button from '../components/button/button';
 
 class ReactComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      counter: 0,
-      props: {
-        props1: 'first props',
-        props2: 'second props'
-      }
-    };
-  }
-  componentWillMount() {
-    this.counter = this.props.getActionData();
-  }
   render() {
-    const totalSelector = createSelector(
-      [
-        state => state.counter,
-        state => state.props.props1,
-        state => state.props.props2
-      ],
-      (props1, props2, counter) => (`${props1} ${props2} ${counter}`)
-    );
-    console.dir(totalSelector(this.state));
+    const data = this.props.data;
+    const { props } = this;
     return (
       <div>
         custom component
         <br />
         <Button
           btnProps={{
-            label: this.props.currentStore.Reducer.btnLabel,
+            label: data.btnLabel,
             type: 'default',
-            eventClick: this.props
+            eventClick: props.appendCounter
           }}
         />
+        <br />
+          Current counter { data.counter }
       </div>
     );
   }
 }
 
-const mapStateToProps = state => (
-  { currentStore: state }
-);
+const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
 

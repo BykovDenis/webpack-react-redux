@@ -3,8 +3,8 @@
  */
 import { combineReducers } from 'redux';
 
-import handleActions from './reducers/reducer';
+import data from './reducers/reducer';
 
 export default combineReducers({
-  handleActions
+  data
 });
