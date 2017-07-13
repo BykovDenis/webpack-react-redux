@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2148b2db-06f4-4b79-90f3-12e658df2cbd" name="Default" comment="Пустая сборка react с redux настроена для разработки новых компонентов">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/app/index.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/components/block-header/index.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/components/block-header/index.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/js/containers/container.jsx" afterPath="$PROJECT_DIR$/src/js/react-component/index.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/js/containers/container.scss" afterPath="$PROJECT_DIR$/src/js/react-component/index.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/components/main-nav/index.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/routes.jsx" afterPath="$PROJECT_DIR$/src/js/routes.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/react-component/index.jsx" afterPath="$PROJECT_DIR$/src/js/react-component/index.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,12 +22,26 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/routes.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="43" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="15" column="56" lean-forward="false" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/components/main-nav/index.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="e#47#73#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -39,8 +49,8 @@
       <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/app/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="102">
+              <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
               <folding>
                 <element signature="e#47#73#0" expanded="true" />
               </folding>
@@ -72,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/react-component/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="119">
+              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#134#177#0" expanded="true" />
@@ -167,9 +177,11 @@
         <option value="$PROJECT_DIR$/src/js/app/index.jsx.js" />
         <option value="$PROJECT_DIR$/src/js/components/block-header/index.js" />
         <option value="$PROJECT_DIR$/src/js/components/block-header/index.jsx" />
+        <option value="$PROJECT_DIR$/src/js/components/main-nav/index.js" />
         <option value="$PROJECT_DIR$/src/js/app/index.jsx" />
-        <option value="$PROJECT_DIR$/src/js/react-component/index.jsx" />
+        <option value="$PROJECT_DIR$/src/js/components/main-nav/index.jsx" />
         <option value="$PROJECT_DIR$/src/js/routes.jsx" />
+        <option value="$PROJECT_DIR$/src/js/react-component/index.jsx" />
       </list>
     </option>
   </component>
@@ -291,6 +303,10 @@
               <option name="myItemId" value="components" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main-nav" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -311,10 +327,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="block-header" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -462,7 +474,7 @@
       <workItem from="1496413507486" duration="7696000" />
       <workItem from="1496477650314" duration="3675000" />
       <workItem from="1496482331056" duration="361000" />
-      <workItem from="1499944423040" duration="8518000" />
+      <workItem from="1499944423040" duration="9392000" />
     </task>
     <task id="LOCAL-00001" summary="Пустая сборка с настройками для работы с компонентами">
       <created>1496415382052</created>
@@ -482,7 +494,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20250000" />
+    <option name="totallyTimeSpent" value="21124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -808,8 +820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/app/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="102">
+          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
           <folding>
             <element signature="e#47#73#0" expanded="true" />
           </folding>
@@ -826,22 +838,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/react-component/index.jsx">
+    <entry file="file://$PROJECT_DIR$/src/js/components/main-nav/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="272">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#134#177#0" expanded="true" />
+            <element signature="e#47#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/routes.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="43" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="255">
+          <caret line="15" column="56" lean-forward="false" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/react-component/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#134#177#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

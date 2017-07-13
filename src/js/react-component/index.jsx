@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as actionCreators from '../redux/actions/actions';
 // подгрузка компонентов
 import Button from '../components/button/button';
+import MainNav from '../components/main-nav';
 
 class ReactComponent extends Component {
   render() {
@@ -12,6 +13,7 @@ class ReactComponent extends Component {
     const { props } = this;
     return (
       <div>
+        <MainNav />
         {props.children}
         custom component
         <br />
