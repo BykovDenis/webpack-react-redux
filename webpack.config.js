@@ -2,13 +2,16 @@
  * Created by bykovdenis on 11.03.17.
  */
 require('babel-polyfill');
-// Установка режима работы сборщика
-const NODE_ENV = process.env.NODE_ENV || 'development';
-// Режим очистки старых файлов билда при каждой сборке
-const REFRESH = process.env.REFRESH;
 // webpack.config.js
 const webpack = require('webpack');
 const path = require('path');
+// Установка режима работы сборщика
+// Режим очистки старых файлов билда при каждой сборке
+const REFRESH = process.env.REFRESH;
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const isProduction = NODE_ENV === 'production';
+const buildPath = path.join(__dirname, './build');
+const sourcePath = path.join(__dirname, './src');
 var fs = require('fs');
 // Плагин очистки директории
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -25,8 +28,8 @@ const srcDir = 'src';
 const outputDir = 'build/';
 
 const assetsPath = path.resolve(__dirname, '../build');
-const host = (process.env.HOST || 'localhost');
-const port = (+process.env.PORT + 1) || 3001;
+const host = (process.env.HOST || '0.0.0.0');
+const port = 3000;
 
 var babelrc = fs.readFileSync('./.babelrc');
 var babelrcObject = {};
@@ -88,6 +91,35 @@ module.exports = {
     publicPath: '/',
     filename: 'js/[name].[hash].js',
     chunkFilename: 'js/[name].[hash].js'
+  },
+  devServer: {
+      contentBase: isProduction ? buildPath : sourcePath,
+      historyApiFallback: true,
+      port: 3000,
+
+      historyApiFallback: {
+          index: '/'
+      },
+      publicPath: '/',
+      compress: isProduction,
+      inline: !isProduction,
+      hot: !isProduction,
+      host: '0.0.0.0',
+      disableHostCheck: true,
+      stats: {
+          assets: true,
+          children: false,
+          chunks: false,
+          hash: false,
+          modules: false,
+          publicPath: true,
+          timings: true,
+          version: false,
+          warnings: true,
+          colors: {
+              green: '\u001b[32m',
+          },
+      },
   },
   devtool: 'inline-source-map',
   // Определение расширений файлов по-умолчанию

@@ -1,13 +1,19 @@
 /**
  * Created by Denis on 18.04.2017.
  */
+import handleActions from 'redux-actions/lib/handleActions';
 import initialState from '../initialState/initialState';
-import * as constants from '../constants/constants';
+import {
+  GET_DATA,
+  COUNTER_INCREMENT,
+} from '../constants/constants';
 
-export default function Reducer(state = initialState, action) {
-  const params = action.payload;
-  if (action.type === constants.GET_DATA && params) {
-    return Object.assign({}, state, params);
-  }
-  return state;
-}
+export default handleActions({
+  [GET_DATA]: state => ({
+    ...state,
+  }),
+  [COUNTER_INCREMENT]: (state, action) => ({
+    ...state,
+    counter: action.payload
+  })
+}, initialState);

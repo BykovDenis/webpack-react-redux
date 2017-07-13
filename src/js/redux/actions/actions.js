@@ -1,7 +1,10 @@
 /**
  * Created by Denis on 18.04.2017.
  */
-import * as constants from '../constants/constants';
+import {
+    GET_DATA,
+    COUNTER_INCREMENT,
+} from '../constants/constants';
 import initialState from '../initialState/initialState';
 
 require('es6-promise').polyfill();
@@ -17,15 +20,16 @@ const getHTTP = (url, callback, dispatch) => {
 };
 */
 
-const responseData = (data = initialState, dispatch) => {
+export const responseData = (data = initialState, dispatch) => {
   dispatch({
-    type: constants.GET_DATA,
+    type: GET_DATA,
     payload: data
   });
 };
 
-const getActionData = () => (dispatch) => {
-  responseData(initialState, dispatch);
+export const appendCounter = (counter, dispatch) => {
+  dispatch({
+    type: COUNTER_INCREMENT,
+    payload: counter
+  });
 };
-
-export default getActionData;

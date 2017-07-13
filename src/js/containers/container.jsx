@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // reselect
 import { createSelector } from 'reselect';
 // модуль комбинирования работы нескольких актшионов
 import { bindActionCreators } from 'redux';
-import getActionData from '../redux/actions/actions';
+import * as actionCreators from '../redux/actions/actions';
 // подгрузка компонентов
 import Button from '../components/button/button';
 
 class ReactComponent extends Component {
-  static get propTypes() {
-    return {
-      getData: PropTypes.func.isRequired,
-      currentStore: PropTypes.object.isRequired,
-    };
-  }
   constructor(props) {
     super(props);
     this.state = {
@@ -25,16 +18,9 @@ class ReactComponent extends Component {
         props2: 'second props'
       }
     };
-    this.changePropsState = this.changePropsState.bind(this);
   }
   componentWillMount() {
-    this.props.getData();
-  }
-  changePropsState() {
-    this.setState({
-      counter: this.state.counter + 1,
-      props: this.state.props
-    });
+    this.counter = this.props.getActionData();
   }
   render() {
     const totalSelector = createSelector(
@@ -54,7 +40,7 @@ class ReactComponent extends Component {
           btnProps={{
             label: this.props.currentStore.Reducer.btnLabel,
             type: 'default',
-            eventClick: this.changePropsState
+            eventClick: this.props
           }}
         />
       </div>
@@ -62,11 +48,13 @@ class ReactComponent extends Component {
   }
 }
 
-const getDataProps = dispatch => (
-  { getData: bindActionCreators(getActionData, dispatch) }
+const mapStateToProps = state => (
+  { currentStore: state }
 );
 
+const mapDispatchToProps = dispatch => bindActionCreators(actionCreators, dispatch);
+
 export default connect(
-  state => ({ currentStore: state }),
-  getDataProps
+    mapStateToProps,
+    mapDispatchToProps
 )(ReactComponent);
