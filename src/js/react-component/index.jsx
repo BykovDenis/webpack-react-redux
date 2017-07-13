@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // модуль комбинирования работы нескольких актшионов
 import { bindActionCreators } from 'redux';
+import RaisedButton from 'material-ui/RaisedButton';
 import * as actionCreators from '../redux/actions/actions';
 // подгрузка компонентов
-import Button from '../components/button/button';
 import MainNav from '../components/main-nav';
 
 class ReactComponent extends Component {
@@ -17,15 +17,14 @@ class ReactComponent extends Component {
         {props.children}
         custom component
         <br />
-        <Button
-          btnProps={{
-            label: data.btnLabel,
-            type: 'default',
-            eventClick: props.appendCounter
-          }}
+        <RaisedButton
+          label={data.btnLabel}
+          primary={'true'}
+          onClick={props.appendCounter}
         />
         <br />
           Current counter { data.counter }
+        <br />
       </div>
     );
   }
