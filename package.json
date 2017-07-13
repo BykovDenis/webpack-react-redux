@@ -80,6 +80,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^4.0.0",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.6",
     "redux": "^3.0.4",
     "redux-actions": "^2.2.1",
     "redux-devtools-extension": "^2.13.0",
