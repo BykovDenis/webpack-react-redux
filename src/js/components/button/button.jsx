@@ -17,6 +17,7 @@ export default class Button extends React.Component {
         type="button"
         className={styles.button}
         value={this.props.btnProps.label}
+        onClick={this.props.btnProps.eventClick}
       />
     );
   }

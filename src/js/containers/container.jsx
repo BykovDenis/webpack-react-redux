@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+// reselect
+import { createSelector } from 'reselect';
 // модуль комбинирования работы нескольких актшионов
 import { bindActionCreators } from 'redux';
 import * as getActionData from '../redux/actions/actions';
@@ -14,13 +16,37 @@ class ReactComponent extends Component {
       currentStore: PropTypes.object.isRequired,
     };
   }
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0,
+      props: {
+        props1: 'first props',
+        props2: 'second props'
+      }
+    };
+    this.changePropsState = this.changePropsState.bind(this);
+  }
   componentWillMount() {
     this.props.getData.getActionData();
     this.props.getData.getAirportsData();
   }
+  changePropsState() {
+    this.setState({
+      counter: this.state.counter + 1,
+      props: this.state.props
+    });
+  }
   render() {
-    this.i = 2;
-    console.log(this.i);
+    const totalSelector = createSelector(
+      [
+        state => state.counter,
+        state => state.props.props1,
+        state => state.props.props2
+      ],
+      (props1, props2, counter) => (`${props1} ${props2} ${counter}`)
+    );
+    console.dir(totalSelector(this.state));
     return (
       <div>
         custom component
@@ -28,7 +54,8 @@ class ReactComponent extends Component {
         <Button
           btnProps={{
             label: this.props.currentStore.Reducer.btnLabel,
-            type: 'default'
+            type: 'default',
+            eventClick: this.changePropsState
           }}
         />
       </div>
