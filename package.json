@@ -48,7 +48,7 @@
     "react-transform-catch-errors": "^1.0.0",
     "react-transform-hmr": "^1.0.1",
     "redbox-react": "^1.1.1",
-    "webpack": "^2.2.1",
+    "webpack": "3.x",
     "webpack-dashboard": "^0.3.0"
   },
   "dependencies": {
