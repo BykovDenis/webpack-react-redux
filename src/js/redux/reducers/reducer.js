@@ -9,5 +9,9 @@ export default function Reducer(state = initialState, action) {
   if (action.type === constants.GET_DATA && params) {
     return Object.assign({}, state, params);
   }
+  if (action.type === constants.GET_AIRPORTS && params) {
+    const airports = { airports: params };
+    return Object.assign({}, state, airports);
+  }
   return state;
 }

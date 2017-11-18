@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 // модуль комбинирования работы нескольких актшионов
 import { bindActionCreators } from 'redux';
-import getActionData from '../redux/actions/actions';
+import * as getActionData from '../redux/actions/actions';
 // подгрузка компонентов
 import Button from '../components/button/button';
 
 class ReactComponent extends Component {
   static get propTypes() {
     return {
-      getData: PropTypes.func.isRequired,
+      getData: PropTypes.object.isRequired,
       currentStore: PropTypes.object.isRequired,
     };
   }
@@ -28,7 +28,8 @@ class ReactComponent extends Component {
     this.changePropsState = this.changePropsState.bind(this);
   }
   componentWillMount() {
-    this.props.getData();
+    this.props.getData.getActionData();
+    this.props.getData.getAirportsData();
   }
   changePropsState() {
     this.setState({
